@@ -118,6 +118,7 @@ nav a:hover {
 .hero h1 span {
     background: linear-gradient(90deg, #fff, #b000ff, #4de8ff);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
@@ -320,6 +321,81 @@ footer {
         gap: 20px;
     }
 }
+/* PREMIUM MOBILE */
+@media (max-width: 600px) {
+
+  nav {
+    padding: 18px 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  nav > div:last-child {
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    min-height: 90vh;
+    padding: 100px 24px 60px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 16vw, 78px);
+    line-height: .9;
+  }
+
+  .hero p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  section {
+    padding: 80px 20px;
+  }
+
+  section h2 {
+    font-size: 42px;
+    line-height: 1;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+  }
+
+  .booking-box {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .booking-item {
+    min-height: 130px;
+  }
+
+  footer {
+    padding: 50px 20px;
+    text-align: center;
+  }
+}
+
 </style>
 </head>
 
@@ -332,7 +408,7 @@ footer {
         <a href="#about">ABOUT</a>
         <a href="#music">MUSIC</a>
         <a href="#live">LIVE</a>
-        <a href="#booking">BOOKING</a>
+      <a href="mailto:ysf.dvfm0@icloud.com">CONTACT</a>
     </div>
 </nav>
 
@@ -455,6 +531,7 @@ footer {
 
 <!-- BOOKING -->
 
+<!-- BOOKING -->
 <section class="booking" id="booking">
 
     <div class="section-title">
@@ -463,12 +540,40 @@ footer {
 
     <h2>
         LET'S<br>
-        CREATE.
+        <span>CREATE.</span>
     </h2>
 
     <p>
         Bookings, events, collaborations and music projects.
     </p>
+
+    <div class="booking-box">
+
+        <div class="booking-item">
+            <span>01</span>
+            <div>
+                <strong>BOOKINGS</strong>
+                <small>Club • Festival • Private Events</small>
+            </div>
+        </div>
+
+        <div class="booking-item">
+            <span>02</span>
+            <div>
+                <strong>COLLABORATIONS</strong>
+                <small>Artists • Producers • Brands</small>
+            </div>
+        </div>
+
+        <div class="booking-item">
+            <span>03</span>
+            <div>
+                <strong>MUSIC PROJECTS</strong>
+                <small>Remixes • Edits • Original Music</small>
+            </div>
+        </div>
+
+    </div>
 
     <a href="mailto:ysf.dvrm0@icloud.com" class="btn primary">
         CONTACT ME
@@ -488,6 +593,68 @@ footer {
     </div>
 
 </footer>
+<!-- CONTACT / BOOKINGS -->
+<section id="contact" style="
+  padding: 120px 8%;
+  background: #050505;
+  text-align: center;
+">
 
+  <div style="
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: #b000ff;
+    margin-bottom: 25px;
+    font-weight: 700;
+  ">
+    CONTACT
+  </div>
+
+  <h2 style="
+    font-size: clamp(42px, 7vw, 90px);
+    line-height: .95;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: -3px;
+  ">
+    LET'S CREATE<br>
+    <span style="
+      background: linear-gradient(90deg, #ffffff, #b000ff, #4de8ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    ">
+      SOMETHING.
+    </span>
+  </h2>
+
+  <p style="
+    max-width: 600px;
+    margin: 35px auto;
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1.8;
+  ">
+    Bookings, collaborations and music projects.
+    Get in touch and let's make some noise.
+  </p>
+
+  <a href="https://www.instagram.com/devrim_dj/"
+     target="_blank"
+     style="
+       display: inline-block;
+       padding: 16px 32px;
+       border: 1px solid #b000ff;
+       border-radius: 50px;
+       color: #fff;
+       text-decoration: none;
+       font-weight: 700;
+       letter-spacing: 2px;
+       transition: .3s;
+     ">
+    INSTAGRAM →
+  </a>
+
+</section>
 </body>
 </html>
