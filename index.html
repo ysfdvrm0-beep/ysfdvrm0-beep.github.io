@@ -1,574 +1,496 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yusuf Devrim Işık | DJ</title>
+<title>Yusuf Devrim Işık | DJ & Producer</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta name="description" content="Yusuf Devrim Işık — DJ, Producer and Electronic Music Artist. Melodic Techno, Deep House, Afro House and Turkish Edits.">
 
-        html {
-            scroll-behavior: smooth;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            background: #050505;
-            color: #fff;
-            font-family: Arial, Helvetica, sans-serif;
-            overflow-x: hidden;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        /* BACKGROUND */
-        body::before {
-            content: "";
-            position: fixed;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(
-                circle,
-                rgba(150, 0, 255, 0.14),
-                transparent 65%
-            );
-            top: -300px;
-            right: -250px;
-            pointer-events: none;
-        }
+body {
+    background: #050505;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-        body::after {
-            content: "";
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(
-                circle,
-                rgba(0, 180, 255, 0.08),
-                transparent 65%
-            );
-            bottom: -300px;
-            left: -250px;
-            pointer-events: none;
-        }
+/* NAVBAR */
 
-        /* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0,0,0,.85), transparent);
+}
 
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 24px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: rgba(5,5,5,0.65);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
 
-        .logo {
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: 3px;
-        }
+.logo span {
+    color: #b100ff;
+}
 
-        .logo span {
-            color: #a855f7;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: .8;
+    transition: .3s;
+}
 
-        nav a {
-            color: #aaa;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 13px;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
+nav a:hover {
+    opacity: 1;
+    color: #d000ff;
+}
 
-        nav a:hover {
-            color: white;
-        }
+/* HERO */
 
-        /* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 8%;
+    position: relative;
+    overflow: hidden;
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 120px 20px 80px;
-            position: relative;
-        }
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.7) 45%, rgba(0,0,0,.15) 100%),
+        url("hero.jpg");
 
-        .hero-content {
-            max-width: 900px;
-            animation: fadeUp 1.2s ease;
-        }
+    background-size: cover;
+    background-position: center;
+}
 
-        .small-title {
-            color: #a855f7;
-            letter-spacing: 6px;
-            font-size: 12px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-        }
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #8d00ff;
+    filter: blur(180px);
+    opacity: .18;
+    right: -150px;
+    bottom: -150px;
+}
 
-        h1 {
-            font-size: clamp(55px, 10vw, 120px);
-            line-height: 0.9;
-            letter-spacing: -5px;
-            font-weight: 900;
-        }
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
 
-        h1 span {
-            background: linear-gradient(
-                90deg,
-                #ffffff,
-                #a855f7,
-                #5ee7df
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.small-title {
+    color: #d000ff;
+    letter-spacing: 7px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
 
-        .subtitle {
-            margin-top: 30px;
-            color: #aaa;
-            font-size: 16px;
-            letter-spacing: 2px;
-        }
+.hero h1 {
+    font-size: clamp(60px, 10vw, 145px);
+    line-height: .82;
+    letter-spacing: -6px;
+    font-weight: 900;
+}
 
-        .genres {
-            margin-top: 15px;
-            color: #777;
-            font-size: 13px;
-            letter-spacing: 3px;
-        }
+.hero h1 span {
+    background: linear-gradient(90deg, #fff, #b000ff, #4de8ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
 
-        .buttons {
-            margin-top: 45px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+.hero p {
+    margin-top: 35px;
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: #ccc;
+}
 
-        .btn {
-            text-decoration: none;
-            color: white;
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 15px 28px;
-            border-radius: 40px;
-            font-size: 13px;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            background: rgba(255,255,255,0.03);
-        }
+.buttons {
+    margin-top: 40px;
+}
 
-        .btn:hover {
-            transform: translateY(-4px);
-            border-color: #a855f7;
-            box-shadow: 0 0 30px rgba(168,85,247,0.25);
-        }
+.btn {
+    display: inline-block;
+    padding: 16px 30px;
+    margin-right: 12px;
+    border: 1px solid white;
+    border-radius: 40px;
+    text-decoration: none;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: .3s;
+}
 
-        .btn-primary {
-            background: white;
-            color: black;
-            border-color: white;
-        }
+.btn:hover {
+    background: white;
+    color: black;
+}
 
-        .btn-primary:hover {
-            background: #a855f7;
-            color: white;
-            border-color: #a855f7;
-        }
+.btn.primary {
+    background: white;
+    color: black;
+}
 
-        /* SECTION */
+/* SECTIONS */
 
-        section {
-            padding: 120px 8%;
-            position: relative;
-        }
+section {
+    padding: 120px 8%;
+}
 
-        .section-title {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
+.section-title {
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: #b000ff;
+    margin-bottom: 50px;
+}
 
-        .section-line {
-            width: 70px;
-            height: 3px;
-            background: #a855f7;
-            margin-bottom: 45px;
-        }
+/* ABOUT */
 
-        /* ABOUT */
+.about {
+    background: #080808;
+}
 
-        .about {
-            max-width: 850px;
-        }
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
 
-        .about p {
-            color: #999;
-            font-size: 18px;
-            line-height: 1.9;
-        }
+.about img {
+    width: 100%;
+    max-height: 650px;
+    object-fit: cover;
+    filter: grayscale(20%);
+}
 
-        /* MUSIC */
+.about-text h2 {
+    font-size: clamp(40px, 6vw, 75px);
+    line-height: .95;
+    margin-bottom: 30px;
+}
 
-        .music-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+.about-text p {
+    color: #aaa;
+    line-height: 1.9;
+    font-size: 16px;
+}
 
-        .music-card {
-            border: 1px solid rgba(255,255,255,0.08);
-            background: linear-gradient(
-                145deg,
-                rgba(255,255,255,0.05),
-                rgba(255,255,255,0.01)
-            );
-            padding: 35px;
-            min-height: 190px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: 0.4s;
-        }
+/* MUSIC */
 
-        .music-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(168,85,247,0.5);
-        }
+.music {
+    background: #050505;
+}
 
-        .music-card h3 {
-            font-size: 22px;
-        }
+.music-box {
+    border: 1px solid #222;
+    padding: 45px;
+    max-width: 900px;
+}
 
-        .music-card p {
-            color: #777;
-            font-size: 13px;
-            margin-top: 10px;
-        }
+.music-box h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
 
-        .music-link {
-            color: #a855f7;
-            text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-top: 25px;
-        }
+.music-box p {
+    color: #888;
+    margin-bottom: 30px;
+}
 
-        /* SOCIALS */
+/* LIVE */
 
-        .socials {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+.live {
+    background: #090909;
+}
 
-        .social {
-            padding: 18px 28px;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-decoration: none;
-            color: white;
-            transition: 0.3s;
-        }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
 
-        .social:hover {
-            border-color: #a855f7;
-            transform: translateY(-4px);
-        }
+.gallery img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    transition: .4s;
+}
 
-        /* BOOKING */
+.gallery img:hover {
+    transform: scale(1.02);
+}
 
-        .booking {
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
+/* BOOKING */
 
-        .booking h2 {
-            font-size: clamp(40px, 7vw, 75px);
-        }
+.booking {
+    text-align: center;
+    background:
+        radial-gradient(circle at center, rgba(130,0,255,.15), transparent 45%),
+        #050505;
+}
 
-        .booking p {
-            color: #888;
-            margin: 20px 0 35px;
-        }
+.booking h2 {
+    font-size: clamp(45px, 8vw, 100px);
+    line-height: .9;
+    margin-bottom: 30px;
+}
 
-        /* FOOTER */
+.booking p {
+    color: #888;
+    margin-bottom: 40px;
+}
 
-        footer {
-            padding: 40px 8%;
-            display: flex;
-            justify-content: space-between;
-            color: #555;
-            font-size: 12px;
-            letter-spacing: 1px;
-        }
+/* FOOTER */
 
-        /* ANIMATION */
+footer {
+    padding: 60px 8%;
+    border-top: 1px solid #191919;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+/* MOBILE */
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+@media(max-width: 800px) {
 
-        /* MOBILE */
+    nav {
+        padding: 20px;
+    }
 
-        @media(max-width: 700px) {
+    nav div:last-child {
+        display: none;
+    }
 
-            nav {
-                padding: 20px;
-            }
+    .hero {
+        padding: 100px 25px 60px;
+        background-position: 65% center;
+    }
 
-            nav .nav-links {
-                display: none;
-            }
+    .hero h1 {
+        font-size: 65px;
+        letter-spacing: -3px;
+    }
 
-            h1 {
-                letter-spacing: -3px;
-            }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
 
-            section {
-                padding: 90px 25px;
-            }
+    .gallery {
+        grid-template-columns: 1fr;
+    }
 
-            .music-grid {
-                grid-template-columns: 1fr;
-            }
+    .gallery img {
+        height: 450px;
+    }
 
-            footer {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
+    section {
+        padding: 80px 25px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <nav>
-        <div class="logo">
-            DEVRIM<span>.</span>
+<nav>
+    <div class="logo">YUSUF <span>DEVRİM</span></div>
+
+    <div>
+        <a href="#about">ABOUT</a>
+        <a href="#music">MUSIC</a>
+        <a href="#live">LIVE</a>
+        <a href="#booking">BOOKING</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            DJ / PRODUCER
         </div>
 
-        <div class="nav-links">
-            <a href="#about">ABOUT</a>
-            <a href="#music">MUSIC</a>
-            <a href="#social">SOCIAL</a>
-            <a href="#booking">BOOKINGS</a>
-        </div>
-    </nav>
-
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <div class="small-title">
-                DJ / Producer
-            </div>
-
-            <h1>
-                YUSUF<br>
-                <span>DEVRIM</span>
-            </h1>
-
-            <div class="subtitle">
-                DJ • PRODUCER • ELECTRONIC MUSIC
-            </div>
-
-            <div class="genres">
-                MELODIC TECHNO • DEEP HOUSE • AFRO HOUSE • TURKISH EDITS
-            </div>
-
-            <div class="buttons">
-
-                <a href="#music" class="btn btn-primary">
-                    LISTEN TO MUSIC
-                </a>
-
-                <a href="#booking" class="btn">
-                    BOOKINGS
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section id="about">
-
-        <div class="about">
-
-            <h2 class="section-title">
-                ABOUT
-            </h2>
-
-            <div class="section-line"></div>
-
-            <p>
-                Yusuf Devrim Işık, elektronik müzik sahnesinde
-                melodik atmosferleri güçlü ritimlerle birleştiren
-                bir DJ ve müzik tutkunu.
-            </p>
-
-            <br>
-
-            <p>
-                Melodic Techno ve Deep House'ın yanı sıra
-                Afro House ve Türkçe editlerle kendine özgü
-                bir müzikal atmosfer oluşturuyor.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- MUSIC -->
-
-    <section id="music">
-
-        <h2 class="section-title">
-            MUSIC
-        </h2>
-
-        <div class="section-line"></div>
-
-        <div class="music-grid">
-
-            <div class="music-card">
-                <div>
-                    <h3>Spotify</h3>
-                    <p>Listen to my latest music and playlists.</p>
-                </div>
-
-                <a href="#" class="music-link">
-                    OPEN →
-                </a>
-            </div>
-
-
-            <div class="music-card">
-                <div>
-                    <h3>SoundCloud</h3>
-                    <p>DJ sets, edits and exclusive mixes.</p>
-                </div>
-
-                <a href="#" class="music-link">
-                    OPEN →
-                </a>
-            </div>
-
-
-            <div class="music-card">
-                <div>
-                    <h3>Apple Music</h3>
-                    <p>Discover my music and releases.</p>
-                </div>
-
-                <a href="#" class="music-link">
-                    OPEN →
-                </a>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SOCIAL -->
-
-    <section id="social">
-
-        <h2 class="section-title">
-            CONNECT
-        </h2>
-
-        <div class="section-line"></div>
-
-        <div class="socials">
-
-            <a
-                href="https://www.instagram.com/devrim_dj/"
-                class="social"
-                target="_blank"
-            >
-                INSTAGRAM
-            </a>
-
-            <a href="#" class="social">
-                SPOTIFY
-            </a>
-
-            <a href="#" class="social">
-                SOUNDCLOUD
-            </a>
-
-            <a href="#" class="social">
-                APPLE MUSIC
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- BOOKING -->
-
-    <section id="booking" class="booking">
-
-        <h2>
-            LET'S CREATE<br>
-            <span>THE SOUND.</span>
-        </h2>
+        <h1>
+            YUSUF<br>
+            <span>DEVRİM</span>
+        </h1>
 
         <p>
-            Bookings & Collaborations
+            MELODIC TECHNO • DEEP HOUSE • AFRO HOUSE • TURKISH EDITS
         </p>
 
-        <a href="#" class="btn btn-primary">
-            CONTACT
+        <div class="buttons">
+            <a href="#music" class="btn primary">
+                LISTEN TO MUSIC
+            </a>
+
+            <a href="#booking" class="btn">
+                BOOKINGS
+            </a>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="section-title">
+        ABOUT
+    </div>
+
+    <div class="about-grid">
+
+        <img src="about.jpg" alt="Yusuf Devrim Işık">
+
+        <div class="about-text">
+
+            <h2>
+                SOUND<br>
+                WITHOUT<br>
+                LIMITS.
+            </h2>
+
+            <p>
+                Yusuf Devrim Işık is a DJ and electronic music artist
+                blending melodic techno, deep house, afro house and
+                Turkish edits into energetic yet atmospheric sets.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<section class="music" id="music">
+
+    <div class="section-title">
+        MUSIC
+    </div>
+
+    <div class="music-box">
+
+        <h2>LISTEN.</h2>
+
+        <p>
+            Discover my latest music, mixes and edits.
+        </p>
+
+        <a href="#" class="btn">
+            SPOTIFY
         </a>
 
-    </section>
+        <a href="#" class="btn">
+            SOUNDCLOUD
+        </a>
+
+        <a href="#" class="btn">
+            APPLE MUSIC
+        </a>
+
+    </div>
+
+</section>
 
 
-    <footer>
+<!-- LIVE -->
 
-        <div>
-            © 2026 YUSUF DEVRIM IŞIK
-        </div>
+<section class="live" id="live">
 
-        <div>
-            DEVRIM DJ
-        </div>
+    <div class="section-title">
+        LIVE / MOMENTS
+    </div>
 
-    </footer>
+    <div class="gallery">
+
+        <img src="live1.jpg" alt="Yusuf Devrim live">
+        <img src="live2.jpg" alt="Yusuf Devrim DJ set">
+        <img src="live3.jpg" alt="Yusuf Devrim performance">
+
+    </div>
+
+</section>
+
+
+<!-- BOOKING -->
+
+<section class="booking" id="booking">
+
+    <div class="section-title">
+        BOOKINGS
+    </div>
+
+    <h2>
+        LET'S<br>
+        CREATE.
+    </h2>
+
+    <p>
+        Bookings, events, collaborations and music projects.
+    </p>
+
+    <a href="mailto:ysf.dvrm0@icloud.com" class="btn primary">
+        CONTACT ME
+    </a>
+
+</section>
+
+
+<footer>
+
+    <div>
+        © 2026 YUSUF DEVRİM IŞIK
+    </div>
+
+    <div>
+        DJ • PRODUCER • ELECTRONIC MUSIC
+    </div>
+
+</footer>
 
 </body>
 </html>
