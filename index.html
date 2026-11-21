@@ -1810,7 +1810,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =========================================================
-       CLOUDFLARE R2
+       CLOUDFLARE R2 LIVE SETS
     ========================================================= */
 
     const R2_BASE =
@@ -1895,7 +1895,6 @@ document.addEventListener("DOMContentLoaded", function(){
             return "00:00";
         }
 
-
         const hours =
             Math.floor(seconds / 3600);
 
@@ -1932,14 +1931,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =========================================================
-       PLAY SET
+       PLAY SELECTED SET
     ========================================================= */
 
     async function playSet(index){
 
         const set =
             liveSets[index];
-
 
         if(!set){
             return;
@@ -1951,7 +1949,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
         liveTitle.textContent =
             set.title;
-
 
         liveStatus.textContent =
             "Loading live set...";
@@ -1976,13 +1973,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
             audio.pause();
 
-
             audio.removeAttribute("src");
-
 
             audio.src =
                 set.url;
-
 
             audio.load();
 
@@ -1990,10 +1984,8 @@ document.addEventListener("DOMContentLoaded", function(){
             progressBar.value =
                 0;
 
-
             currentTime.textContent =
                 "00:00";
-
 
             duration.textContent =
                 "00:00";
@@ -2014,7 +2006,6 @@ document.addEventListener("DOMContentLoaded", function(){
                 error
             );
 
-
             liveStatus.textContent =
                 "Audio could not be loaded.";
 
@@ -2024,7 +2015,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =========================================================
-       MAIN PLAY
+       MAIN PLAY BUTTON
     ========================================================= */
 
     async function toggleMainPlay(){
@@ -2142,7 +2133,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =========================================================
-       METADATA
+       LOADED METADATA
     ========================================================= */
 
     audio.addEventListener(
@@ -2178,7 +2169,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =========================================================
-       PLAY
+       PLAY STATE
     ========================================================= */
 
     audio.addEventListener(
@@ -2193,7 +2184,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =========================================================
-       PAUSE
+       PAUSE STATE
     ========================================================= */
 
     audio.addEventListener(
@@ -2229,7 +2220,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =========================================================
-       ERROR
+       AUDIO ERROR
     ========================================================= */
 
     audio.addEventListener(
@@ -2241,7 +2232,6 @@ document.addEventListener("DOMContentLoaded", function(){
                 audio.error
             );
 
-
             liveStatus.textContent =
                 "Audio could not be loaded.";
 
@@ -2250,7 +2240,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =========================================================
-       PROGRESS
+       PROGRESS BAR
     ========================================================= */
 
     progressBar.addEventListener(
