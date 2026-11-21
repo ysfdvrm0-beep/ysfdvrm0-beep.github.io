@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Yusuf Devrim Işık | DJ & Producer</title>
 
-<meta name="description" content="Yusuf Devrim Işık — DJ, Producer and Electronic Music Artist. Melodic Techno, Deep House, Afro House and Turkish Edits.">
+<meta name="description"
+content="Yusuf Devrim Işık — DJ, Producer and Electronic Music Artist. Melodic Techno, Deep House, Afro House and Turkish Edits.">
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 *{
@@ -35,7 +38,11 @@ body::before{
     position:fixed;
     width:600px;
     height:600px;
-    background:radial-gradient(circle,rgba(255,255,255,.07),transparent 70%);
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,.07),
+        transparent 70%
+    );
     top:-250px;
     left:-200px;
     pointer-events:none;
@@ -46,7 +53,11 @@ body::after{
     position:fixed;
     width:500px;
     height:500px;
-    background:radial-gradient(circle,rgba(255,255,255,.05),transparent 70%);
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,.05),
+        transparent 70%
+    );
     bottom:-250px;
     right:-200px;
     pointer-events:none;
@@ -100,19 +111,25 @@ nav a:hover{
 
 /* HERO */
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 120px 20px 70px;
-    position: relative;
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 70px;
+    position:relative;
 
-    background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.70)), url('hero.jpg');
-background-size: cover;
-background-position: center 35%;
-background-repeat: no-repeat;
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.70)
+        ),
+        url('hero.jpg');
+
+    background-size:cover;
+    background-position:center 35%;
+    background-repeat:no-repeat;
 }
 
 .hero-content{
@@ -291,6 +308,321 @@ section{
     text-transform:uppercase;
 }
 
+/* LIVE RADIO */
+
+.live-player{
+    border:1px solid #252525;
+    padding:35px;
+    background:linear-gradient(145deg,#111,#060606);
+    box-shadow:0 25px 80px rgba(0,0,0,.35);
+    position:relative;
+    overflow:hidden;
+}
+
+.live-player::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255,255,255,.06),
+            transparent 35%
+        );
+    pointer-events:none;
+}
+
+.live-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    position:relative;
+    z-index:2;
+}
+
+.live-label{
+    color:#666;
+    font-size:9px;
+    letter-spacing:4px;
+}
+
+.live-top h3{
+    margin-top:10px;
+    font-size:28px;
+    text-transform:uppercase;
+    letter-spacing:-1px;
+}
+
+.live-top p{
+    color:#666;
+    font-size:12px;
+    margin-top:8px;
+}
+
+/* EQUALIZER */
+
+.live-eq{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    height:50px;
+}
+
+.live-eq span{
+    display:block;
+    width:3px;
+    height:18px;
+    background:#fff;
+    opacity:.65;
+    animation:eq 1s ease-in-out infinite alternate;
+}
+
+.live-eq span:nth-child(2){
+    height:32px;
+    animation-delay:.1s;
+}
+
+.live-eq span:nth-child(3){
+    height:44px;
+    animation-delay:.2s;
+}
+
+.live-eq span:nth-child(4){
+    height:27px;
+    animation-delay:.3s;
+}
+
+.live-eq span:nth-child(5){
+    height:38px;
+    animation-delay:.4s;
+}
+
+@keyframes eq{
+
+    from{
+        transform:scaleY(.35);
+        opacity:.25;
+    }
+
+    to{
+        transform:scaleY(1);
+        opacity:.9;
+    }
+
+}
+
+/* PROGRESS */
+
+.live-progress{
+    display:grid;
+    grid-template-columns:45px 1fr 45px;
+    align-items:center;
+    gap:15px;
+    margin-top:35px;
+    position:relative;
+    z-index:2;
+}
+
+.live-progress span{
+    color:#666;
+    font-size:10px;
+    font-variant-numeric:tabular-nums;
+}
+
+#progressBar,
+#volumeBar{
+    appearance:none;
+    width:100%;
+    height:3px;
+    background:#292929;
+    outline:none;
+    cursor:pointer;
+}
+
+#progressBar::-webkit-slider-thumb,
+#volumeBar::-webkit-slider-thumb{
+    appearance:none;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#fff;
+    cursor:pointer;
+}
+
+#progressBar::-moz-range-thumb,
+#volumeBar::-moz-range-thumb{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#fff;
+    cursor:pointer;
+    border:none;
+}
+
+/* CONTROLS */
+
+.live-controls{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:30px;
+    position:relative;
+    z-index:2;
+}
+
+/* MAIN PLAY BUTTON */
+
+.main-play{
+    width:68px;
+    height:68px;
+    border-radius:50%;
+    border:1px solid #555;
+    background:#090909;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.03),
+        0 0 35px rgba(255,255,255,.08);
+}
+
+.main-play:hover{
+    background:#fff;
+    border-color:#fff;
+    transform:scale(1.08);
+    box-shadow:
+        0 0 30px rgba(255,255,255,.18),
+        0 0 70px rgba(255,255,255,.08);
+}
+
+/* PLAY ICON */
+
+.play-icon{
+    width:0;
+    height:0;
+    border-top:11px solid transparent;
+    border-bottom:11px solid transparent;
+    border-left:17px solid #fff;
+    margin-left:5px;
+}
+
+.main-play:hover .play-icon{
+    border-left-color:#000;
+}
+
+/* PAUSE ICON */
+
+.pause-icon{
+    width:16px;
+    height:20px;
+    border-left:5px solid #fff;
+    border-right:5px solid #fff;
+}
+
+.main-play:hover .pause-icon{
+    border-color:#000;
+}
+
+/* VOLUME */
+
+.volume-wrap{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    width:180px;
+}
+
+.volume-wrap span{
+    color:#555;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+/* LIVE LIST */
+
+.live-list{
+    display:grid;
+    gap:10px;
+    margin-top:20px;
+}
+
+.live-card{
+    border:1px solid #1d1d1d;
+    background:#090909;
+    padding:22px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:.3s;
+}
+
+.live-card:hover{
+    border-color:#444;
+    transform:translateX(5px);
+}
+
+.live-card.active{
+    border-color:#777;
+    background:#111;
+    box-shadow:0 0 30px rgba(255,255,255,.03);
+}
+
+.live-number{
+    color:#555;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.live-card h3{
+    margin-top:6px;
+    font-size:16px;
+    text-transform:uppercase;
+}
+
+.live-card p{
+    color:#666;
+    font-size:11px;
+    margin-top:5px;
+}
+
+/* SET PLAY */
+
+.set-play{
+    width:48px;
+    height:48px;
+    border:1px solid #333;
+    border-radius:50%;
+    background:#080808;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.set-play:hover,
+.live-card.active .set-play{
+    background:#fff;
+    border-color:#fff;
+}
+
+.small-play{
+    width:0;
+    height:0;
+    border-top:8px solid transparent;
+    border-bottom:8px solid transparent;
+    border-left:13px solid #fff;
+    margin-left:3px;
+}
+
+.set-play:hover .small-play,
+.live-card.active .small-play{
+    border-left-color:#000;
+}
+
 /* GALLERY */
 
 .gallery{
@@ -369,6 +701,10 @@ section{
     line-height:1.8;
 }
 
+.whatsapp-btn{
+    margin-left:10px;
+}
+
 /* FOOTER */
 
 footer{
@@ -426,23 +762,65 @@ footer{
         flex-direction:column;
         gap:10px;
     }
+
+    .live-player{
+        padding:25px 20px;
+    }
+
+    .live-top{
+        align-items:flex-start;
+    }
+
+    .live-eq{
+        display:none;
+    }
+
+    .live-top h3{
+        font-size:21px;
+    }
+
+    .live-progress{
+        grid-template-columns:40px 1fr 40px;
+        gap:8px;
+    }
+
+    .volume-wrap{
+        width:130px;
+    }
+
+    .live-card{
+        padding:18px;
+    }
+
+    .whatsapp-btn{
+        margin-left:0;
+        margin-top:10px;
+    }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <!-- NAVBAR -->
 
 <nav>
-    <div class="logo">DEVRİM<span>.</span></div>
+
+    <div class="logo">
+        DEVRİM<span>.</span>
+    </div>
 
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#music">Music</a></li>
+        <li><a href="#live">Live</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Booking</a></li>
     </ul>
+
 </nav>
 
 
@@ -467,8 +845,15 @@ footer{
         </div>
 
         <div class="hero-buttons">
-            <a href="#music" class="btn">Listen</a>
-            <a href="#contact" class="btn">Bookings</a>
+
+            <a href="#music" class="btn">
+                Listen
+            </a>
+
+            <a href="#contact" class="btn">
+                Bookings
+            </a>
+
         </div>
 
     </div>
@@ -481,50 +866,74 @@ footer{
 <section id="about">
 
     <div class="section-title">
+
         <small>01 / ABOUT</small>
+
         <h2>The Artist</h2>
+
     </div>
+
 
     <div class="about">
 
         <div class="about-text">
 
             <p>
+
                 <strong>Yusuf Devrim Işık</strong> is a DJ and electronic
                 music artist focused on creating immersive and energetic
                 musical experiences.
+
             </p>
 
             <br>
 
             <p>
+
                 His sound moves between melodic techno, deep house,
                 afro house and carefully selected Turkish edits.
                 Energy, atmosphere and emotion are at the center of every set.
+
             </p>
 
         </div>
 
+
         <div class="info-list">
 
             <div class="info">
+
                 <span>Style</span>
+
                 <span>Melodic Techno</span>
+
             </div>
 
+
             <div class="info">
+
                 <span>Also</span>
+
                 <span>Deep / Afro House</span>
+
             </div>
 
+
             <div class="info">
+
                 <span>Special</span>
+
                 <span>Turkish Edits</span>
+
             </div>
 
+
             <div class="info">
+
                 <span>Available</span>
+
                 <span>Bookings & Collaborations</span>
+
             </div>
 
         </div>
@@ -537,72 +946,405 @@ footer{
 <!-- MUSIC -->
 
 <section id="music">
-    <div class="music-grid">
-    <div class="music-card">
-        <span class="number">01</span>
-        <div>
-            <h3>SoundCloud</h3>
 
     <div class="section-title">
+
         <small>02 / MUSIC</small>
+
         <h2>Listen</h2>
+
     </div>
+
 
     <div class="music-grid">
 
+
         <div class="music-card">
+
             <span class="number">01</span>
 
             <div>
+
                 <h3>SoundCloud</h3>
+
                 <p>DJ sets, mixes & edits</p>
+
             </div>
 
-            <a href="https://on.soundcloud.com/CxbHtNMpd8nQteCPJt" target="_blank">
-    Open →
-</a>
+            <a
+                href="https://on.soundcloud.com/CxbHtNMpd8nQteCPJt"
+                target="_blank"
+                rel="noopener"
+            >
+                Open →
+            </a>
+
         </div>
 
 
         <div class="music-card">
+
             <span class="number">02</span>
 
             <div>
+
                 <h3>Spotify</h3>
+
                 <p>Music & playlists</p>
+
             </div>
 
-           <a href="https://open.spotify.com/artist/7AVObMbZXnnSyUHdokmmAD?si=FQpAUc7LRlCcrUmYY7j6pA&utm_source=copy-link" target="_blank">
-    Open →
-</a>
+            <a
+                href="https://open.spotify.com/artist/7AVObMbZXnnSyUHdokmmAD?si=FQpAUc7LRlCcrUmYY7j6pA&utm_source=copy-link"
+                target="_blank"
+                rel="noopener"
+            >
+                Open →
+            </a>
+
         </div>
 
 
         <div class="music-card">
+
             <span class="number">03</span>
 
             <div>
+
                 <h3>Apple Music</h3>
+
                 <p>Official releases</p>
+
             </div>
 
-            <a href="https://music.apple.com/tr/artist/yusuf-devrim-i%25C5%259F%25C4%25B1k/1834234816?l=tr" target="_blank">
-    Open →
-</a>
+            <a
+                href="https://music.apple.com/tr/artist/yusuf-devrim-i%25C5%259F%25C4%25B1k/1834234816?l=tr"
+                target="_blank"
+                rel="noopener"
+            >
+                Open →
+            </a>
+
         </div>
 
-    </div><div class="music-card">
-    <span class="number">04</span>
 
-    <div>
-        <h3>YouTube</h3>
-        <p>Videos & DJ Sets</p>
+        <div class="music-card">
+
+            <span class="number">04</span>
+
+            <div>
+
+                <h3>YouTube</h3>
+
+                <p>Videos & DJ Sets</p>
+
+            </div>
+
+            <a
+                href="https://youtube.com/@devrimsk4340"
+                target="_blank"
+                rel="noopener"
+            >
+                Open →
+            </a>
+
+        </div>
+
+
     </div>
 
-    <a href="https://youtube.com/@devrimsk4340" target="_blank">
-        Open →
-    </a>
-</div>
+</section>
+
+
+<!-- LIVE RADIO -->
+
+<section id="live">
+
+    <div class="section-title">
+
+        <small>03 / LIVE RADIO</small>
+
+        <h2>Live Sets</h2>
+
+    </div>
+
+
+    <div class="live-player">
+
+        <div class="live-top">
+
+            <div>
+
+                <span class="live-label">
+                    NOW PLAYING
+                </span>
+
+                <h3 id="liveTitle">
+                    Select a live set
+                </h3>
+
+                <p id="liveStatus">
+                    Yusuf Devrim Işık • Live Sessions
+                </p>
+
+            </div>
+
+
+            <div class="live-eq">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- AUDIO -->
+
+        <audio
+            id="liveAudio"
+            preload="metadata"
+        ></audio>
+
+
+        <!-- PROGRESS -->
+
+        <div class="live-progress">
+
+            <span id="currentTime">
+                00:00
+            </span>
+
+
+            <input
+                type="range"
+                id="progressBar"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+
+            <span id="duration">
+                00:00
+            </span>
+
+        </div>
+
+
+        <!-- CONTROLS -->
+
+        <div class="live-controls">
+
+            <button
+                class="main-play"
+                id="mainPlay"
+                aria-label="Play"
+                type="button"
+            >
+
+                <span class="play-icon"></span>
+
+            </button>
+
+
+            <div class="volume-wrap">
+
+                <span>
+                    VOL
+                </span>
+
+                <input
+                    type="range"
+                    id="volumeBar"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.9"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SET LIST -->
+
+    <div class="live-list">
+
+
+        <div class="live-card">
+
+            <div>
+
+                <span class="live-number">
+                    01
+                </span>
+
+                <h3>
+                    Ortaya Karışık 1
+                </h3>
+
+                <p>
+                    Yusuf Devrim Işık • Live Set
+                </p>
+
+            </div>
+
+
+            <button
+                class="set-play"
+                data-index="0"
+                type="button"
+                aria-label="Play Ortaya Karışık 1"
+            >
+
+                <span class="small-play"></span>
+
+            </button>
+
+        </div>
+
+
+        <div class="live-card">
+
+            <div>
+
+                <span class="live-number">
+                    02
+                </span>
+
+                <h3>
+                    Ortaya Karışık 2
+                </h3>
+
+                <p>
+                    Yusuf Devrim Işık • Live Set
+                </p>
+
+            </div>
+
+
+            <button
+                class="set-play"
+                data-index="1"
+                type="button"
+                aria-label="Play Ortaya Karışık 2"
+            >
+
+                <span class="small-play"></span>
+
+            </button>
+
+        </div>
+
+
+        <div class="live-card">
+
+            <div>
+
+                <span class="live-number">
+                    03
+                </span>
+
+                <h3>
+                    Ortaya Karışık 3
+                </h3>
+
+                <p>
+                    Yusuf Devrim Işık • Live Set
+                </p>
+
+            </div>
+
+
+            <button
+                class="set-play"
+                data-index="2"
+                type="button"
+                aria-label="Play Ortaya Karışık 3"
+            >
+
+                <span class="small-play"></span>
+
+            </button>
+
+        </div>
+
+
+        <div class="live-card">
+
+            <div>
+
+                <span class="live-number">
+                    04
+                </span>
+
+                <h3>
+                    Ortaya Karışık 4
+                </h3>
+
+                <p>
+                    Yusuf Devrim Işık • Live Set
+                </p>
+
+            </div>
+
+
+            <button
+                class="set-play"
+                data-index="3"
+                type="button"
+                aria-label="Play Ortaya Karışık 4"
+            >
+
+                <span class="small-play"></span>
+
+            </button>
+
+        </div>
+
+
+        <div class="live-card">
+
+            <div>
+
+                <span class="live-number">
+                    05
+                </span>
+
+                <h3>
+                    Ortaya Karışık 5
+                </h3>
+
+                <p>
+                    Yusuf Devrim Işık • Live Set
+                </p>
+
+            </div>
+
+
+            <button
+                class="set-play"
+                data-index="4"
+                type="button"
+                aria-label="Play Ortaya Karışık 5"
+            >
+
+                <span class="small-play"></span>
+
+            </button>
+
+        </div>
+
+
+    </div>
 
 </section>
 
@@ -612,21 +1354,40 @@ footer{
 <section id="gallery">
 
     <div class="section-title">
-        <small>03 / VISUALS</small>
+
+        <small>04 / VISUALS</small>
+
         <h2>Gallery</h2>
+
     </div>
+
 
     <div class="gallery">
 
-        <img src="IMG_3347.jpeg" alt="Yusuf Devrim Işık DJ">
+        <img
+            src="IMG_3347.jpeg"
+            alt="Yusuf Devrim Işık DJ"
+        >
 
-        <img src="IMG_3841.jpeg" alt="Yusuf Devrim Işık">
+        <img
+            src="IMG_3841.jpeg"
+            alt="Yusuf Devrim Işık"
+        >
 
-        <img src="IMG_3859.jpeg" alt="Yusuf Devrim Işık DJ">
+        <img
+            src="IMG_3859.jpeg"
+            alt="Yusuf Devrim Işık DJ"
+        >
 
-        <img src="IMG_3870.jpeg" alt="Yusuf Devrim Işık">
+        <img
+            src="IMG_3870.jpeg"
+            alt="Yusuf Devrim Işık"
+        >
 
-        <img src="IMG_9099(1).jpeg" alt="Yusuf Devrim Işık">
+        <img
+            src="IMG_9099(1).jpeg"
+            alt="Yusuf Devrim Işık"
+        >
 
     </div>
 
@@ -638,65 +1399,153 @@ footer{
 <section>
 
     <div class="section-title">
-        <small>04 / CONNECT</small>
+
+        <small>05 / CONNECT</small>
+
         <h2>Follow</h2>
+
     </div>
+
 
     <div class="socials">
 
-        <a class="social" href="https://instagram.com/devrim_dj" target="_blank">
-            <small>Instagram</small>
-            <strong>@devrim_dj</strong>
+
+        <a
+            class="social"
+            href="https://instagram.com/devrim_dj"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <small>
+                Instagram
+            </small>
+
+            <strong>
+                @devrim_dj
+            </strong>
+
         </a>
 
-       <a class="social" href="https://soundcloud.com/devrim-i-k-532191742?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">
-    <small>SoundCloud</small>
-    <strong>Listen</strong>
-</a>
-            <small>SoundCloud</small>
-            <strong>Listen</strong>
+
+        <a
+            class="social"
+            href="https://soundcloud.com/devrim-i-k-532191742?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <small>
+                SoundCloud
+            </small>
+
+            <strong>
+                Listen
+            </strong>
+
         </a>
 
-        <a class="social" href="https://open.spotify.com/artist/7AVObMbZXnnSyUHdokmmAD?si=FQpAUc7LRlCcrUmYY7j6pA&utm_source=copy-link" target="_blank">
-            <small>Spotify</small>
-            <strong>Listen</strong>
+
+        <a
+            class="social"
+            href="https://open.spotify.com/artist/7AVObMbZXnnSyUHdokmmAD?si=FQpAUc7LRlCcrUmYY7j6pA&utm_source=copy-link"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <small>
+                Spotify
+            </small>
+
+            <strong>
+                Listen
+            </strong>
+
         </a>
 
-      <a class="social" href="https://music.apple.com/tr/artist/yusuf-devrim-i%25C5%259F%25C4%259Bk/1834234816?l=tr" target="_blank">
-            <small>Apple Music</small>
-            <strong>Listen</strong>
+
+        <a
+            class="social"
+            href="https://music.apple.com/tr/artist/yusuf-devrim-i%25C5%259F%25C4%25B1k/1834234816?l=tr"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <small>
+                Apple Music
+            </small>
+
+            <strong>
+                Listen
+            </strong>
+
         </a>
 
-    <a class="social" href="https://youtube.com/@devrimsk4340" target="_blank">
-    <small>YouTube</small>
-    <strong>@devrimsk4340</strong>
-</a>
-        
-</div>
+
+        <a
+            class="social"
+            href="https://youtube.com/@devrimsk4340"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <small>
+                YouTube
+            </small>
+
+            <strong>
+                @devrimsk4340
+            </strong>
+
+        </a>
+
+
+    </div>
 
 </section>
 
 
 <!-- BOOKING -->
 
-<section id="contact" class="booking">
+<section
+    id="contact"
+    class="booking"
+>
 
     <div class="small-title">
         BOOKINGS & COLLABORATIONS
     </div>
 
-    <h2>Let's Work.</h2>
+
+    <h2>
+        Let's Work.
+    </h2>
+
 
     <p>
+
         For bookings, events, collaborations and music-related inquiries,
         get in touch.
+
     </p>
 
-    <a href="mailto:booking@ysfdvrm.com" class="btn">
+
+    <a
+        href="mailto:booking@ysfdvrm.com"
+        class="btn"
+    >
         Contact
-    </a><a href="https://wa.me/905316681624" target="_blank" rel="noopener" class="btn whatsapp-btn">
-    💬 WHATSAPP
-</a>
+    </a>
+
+
+    <a
+        href="https://wa.me/905316681624"
+        target="_blank"
+        rel="noopener"
+        class="btn whatsapp-btn"
+    >
+        💬 WhatsApp
+    </a>
 
 </section>
 
@@ -705,11 +1554,466 @@ footer{
 
 <footer>
 
-    <span>© 2026 Yusuf Devrim Işık</span>
+    <span>
+        © 2026 Yusuf Devrim Işık
+    </span>
 
-    <span>DJ • Producer</span>
+    <span>
+        DJ • Producer
+    </span>
 
 </footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const liveSets = [
+
+    {
+        title: "Ortaya Karışık 1",
+        url: "https://disk.yandex.com.tr/d/eI0u2xQKqLQbPw"
+    },
+
+    {
+        title: "Ortaya Karışık 2",
+        url: "https://disk.yandex.com.tr/d/mJwxGtir6uMaHQ"
+    },
+
+    {
+        title: "Ortaya Karışık 3",
+        url: "https://disk.yandex.com.tr/d/deaGvJHZyNIqpw"
+    },
+
+    {
+        title: "Ortaya Karışık 4",
+        url: "https://disk.yandex.com.tr/d/K7-rmRuEUWCn7g"
+    },
+
+    {
+        title: "Ortaya Karışık 5",
+        url: "https://disk.yandex.com.tr/d/qQHebFJ5pa9E9g"
+    }
+
+];
+
+
+/* ELEMENTS */
+
+const audio =
+    document.getElementById("liveAudio");
+
+const mainPlay =
+    document.getElementById("mainPlay");
+
+const progressBar =
+    document.getElementById("progressBar");
+
+const volumeBar =
+    document.getElementById("volumeBar");
+
+const liveTitle =
+    document.getElementById("liveTitle");
+
+const liveStatus =
+    document.getElementById("liveStatus");
+
+const currentTime =
+    document.getElementById("currentTime");
+
+const duration =
+    document.getElementById("duration");
+
+const setButtons =
+    document.querySelectorAll(".set-play");
+
+const liveCards =
+    document.querySelectorAll(".live-card");
+
+
+let currentSet = -1;
+
+
+/* FORMAT TIME */
+
+function formatTime(seconds){
+
+    if(!isFinite(seconds)){
+        return "00:00";
+    }
+
+    const hours =
+        Math.floor(seconds / 3600);
+
+    const minutes =
+        Math.floor(
+            (seconds % 3600) / 60
+        );
+
+    const secs =
+        Math.floor(seconds % 60);
+
+
+    if(hours > 0){
+
+        return (
+            String(hours).padStart(2,"0")
+            + ":" +
+            String(minutes).padStart(2,"0")
+            + ":" +
+            String(secs).padStart(2,"0")
+        );
+
+    }
+
+
+    return (
+        String(minutes).padStart(2,"0")
+        + ":" +
+        String(secs).padStart(2,"0")
+    );
+
+}
+
+
+/* GET YANDEX DIRECT AUDIO URL */
+
+async function getYandexDirectUrl(publicUrl){
+
+    const apiUrl =
+        "https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key="
+        + encodeURIComponent(publicUrl);
+
+
+    const response =
+        await fetch(apiUrl);
+
+
+    if(!response.ok){
+
+        throw new Error(
+            "Yandex bağlantısı alınamadı."
+        );
+
+    }
+
+
+    const data =
+        await response.json();
+
+
+    if(!data.href){
+
+        throw new Error(
+            "Yandex MP3 bağlantısı bulunamadı."
+        );
+
+    }
+
+
+    return data.href;
+
+}
+
+
+/* PLAY SET */
+
+async function playSet(index){
+
+    const set =
+        liveSets[index];
+
+
+    if(!set){
+        return;
+    }
+
+
+    currentSet = index;
+
+
+    liveTitle.textContent =
+        set.title;
+
+
+    liveStatus.textContent =
+        "Preparing live set...";
+
+
+    liveCards.forEach(card => {
+
+        card.classList.remove("active");
+
+    });
+
+
+    if(liveCards[index]){
+
+        liveCards[index]
+            .classList.add("active");
+
+    }
+
+
+    try{
+
+        /*
+        Aynı set tekrar seçilirse
+        yeniden URL istemiyoruz.
+        */
+
+        if(
+            !audio.dataset.set ||
+            audio.dataset.set !== String(index)
+        ){
+
+            liveStatus.textContent =
+                "Loading live set...";
+
+
+            const directUrl =
+                await getYandexDirectUrl(
+                    set.url
+                );
+
+
+            audio.src =
+                directUrl;
+
+
+            audio.dataset.set =
+                String(index);
+
+        }
+
+
+        await audio.play();
+
+
+        liveStatus.textContent =
+            "Yusuf Devrim Işık • Live Session";
+
+
+    }
+    catch(error){
+
+        console.error(error);
+
+
+        liveStatus.textContent =
+            "Unable to play this set.";
+
+    }
+
+}
+
+
+/* MAIN PLAY */
+
+function toggleMainPlay(){
+
+    if(currentSet === -1){
+
+        playSet(0);
+
+        return;
+
+    }
+
+
+    if(audio.paused){
+
+        audio.play();
+
+    }
+    else{
+
+        audio.pause();
+
+    }
+
+}
+
+
+/* SET BUTTONS */
+
+setButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const index =
+                Number(
+                    button.dataset.index
+                );
+
+
+            /*
+            Aynı parça çalıyorsa
+            pause / play yap.
+            */
+
+            if(
+                currentSet === index &&
+                !audio.paused
+            ){
+
+                audio.pause();
+
+                return;
+
+            }
+
+
+            playSet(index);
+
+        }
+    );
+
+});
+
+
+/* MAIN PLAY BUTTON */
+
+mainPlay.addEventListener(
+    "click",
+    toggleMainPlay
+);
+
+
+/* TIME UPDATE */
+
+audio.addEventListener(
+    "timeupdate",
+    () => {
+
+        if(audio.duration){
+
+            progressBar.value =
+                (
+                    audio.currentTime /
+                    audio.duration
+                ) * 100;
+
+        }
+
+
+        currentTime.textContent =
+            formatTime(
+                audio.currentTime
+            );
+
+    }
+);
+
+
+/* METADATA */
+
+audio.addEventListener(
+    "loadedmetadata",
+    () => {
+
+        duration.textContent =
+            formatTime(
+                audio.duration
+            );
+
+    }
+);
+
+
+/* PLAY EVENT */
+
+audio.addEventListener(
+    "play",
+    () => {
+
+        mainPlay.innerHTML =
+            '<span class="pause-icon"></span>';
+
+    }
+);
+
+
+/* PAUSE EVENT */
+
+audio.addEventListener(
+    "pause",
+    () => {
+
+        mainPlay.innerHTML =
+            '<span class="play-icon"></span>';
+
+    }
+);
+
+
+/* ENDED */
+
+audio.addEventListener(
+    "ended",
+    () => {
+
+        mainPlay.innerHTML =
+            '<span class="play-icon"></span>';
+
+    }
+);
+
+
+/* ERROR */
+
+audio.addEventListener(
+    "error",
+    () => {
+
+        liveStatus.textContent =
+            "Audio could not be loaded.";
+
+    }
+);
+
+
+/* PROGRESS */
+
+progressBar.addEventListener(
+    "input",
+    () => {
+
+        if(audio.duration){
+
+            audio.currentTime =
+                (
+                    progressBar.value /
+                    100
+                ) * audio.duration;
+
+        }
+
+    }
+);
+
+
+/* VOLUME */
+
+volumeBar.addEventListener(
+    "input",
+    () => {
+
+        audio.volume =
+            volumeBar.value;
+
+    }
+);
+
+
+/* DEFAULT VOLUME */
+
+audio.volume = 0.9;
+
+</script>
 
 </body>
 </html>
