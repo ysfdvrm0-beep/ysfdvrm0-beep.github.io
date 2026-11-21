@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,6 +12,10 @@
 content="Yusuf Devrim Işık — DJ, Producer and Electronic Music Artist. Melodic Techno, Deep House, Afro House and Turkish Edits.">
 
 <style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -25,7 +30,7 @@ html{
 }
 
 body{
-    background:#050505;
+    background:#050706;
     color:#fff;
     font-family:'Inter',Arial,sans-serif;
     overflow-x:hidden;
@@ -36,34 +41,39 @@ body{
 body::before{
     content:"";
     position:fixed;
-    width:600px;
-    height:600px;
+    width:650px;
+    height:650px;
     background:radial-gradient(
         circle,
-        rgba(255,255,255,.07),
+        rgba(27,94,62,.12),
         transparent 70%
     );
-    top:-250px;
-    left:-200px;
+    top:-280px;
+    left:-220px;
     pointer-events:none;
+    z-index:-1;
 }
 
 body::after{
     content:"";
     position:fixed;
-    width:500px;
-    height:500px;
+    width:600px;
+    height:600px;
     background:radial-gradient(
         circle,
-        rgba(255,255,255,.05),
+        rgba(19,76,49,.10),
         transparent 70%
     );
-    bottom:-250px;
-    right:-200px;
+    bottom:-300px;
+    right:-220px;
     pointer-events:none;
+    z-index:-1;
 }
 
-/* NAVBAR */
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 nav{
     position:fixed;
@@ -75,9 +85,11 @@ nav{
     justify-content:space-between;
     align-items:center;
     z-index:1000;
-    background:rgba(5,5,5,.72);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(255,255,255,.08);
+
+    background:rgba(5,7,6,.78);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.07);
 }
 
 .logo{
@@ -87,7 +99,7 @@ nav{
 }
 
 .logo span{
-    color:#888;
+    color:#3f8f67;
 }
 
 nav ul{
@@ -106,24 +118,31 @@ nav a{
 }
 
 nav a:hover{
-    color:#fff;
+    color:#72b98e;
 }
 
-/* HERO */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
     min-height:100vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
+
     padding:120px 20px 70px;
+
     position:relative;
 
     background-image:
         linear-gradient(
             rgba(0,0,0,.55),
-            rgba(0,0,0,.70)
+            rgba(0,0,0,.72)
         ),
         url('hero.jpg');
 
@@ -137,7 +156,7 @@ nav a:hover{
 }
 
 .small-title{
-    color:#888;
+    color:#789080;
     font-size:12px;
     letter-spacing:7px;
     text-transform:uppercase;
@@ -154,7 +173,7 @@ nav a:hover{
 
 .hero h1 span{
     color:transparent;
-    -webkit-text-stroke:1px #777;
+    -webkit-text-stroke:1px #789080;
 }
 
 .hero-sub{
@@ -168,6 +187,7 @@ nav a:hover{
 
 .hero-buttons{
     margin-top:45px;
+
     display:flex;
     justify-content:center;
     gap:15px;
@@ -176,23 +196,32 @@ nav a:hover{
 
 .btn{
     display:inline-block;
+
     padding:15px 28px;
-    border:1px solid #444;
+
+    border:1px solid #315b45;
+
     color:#fff;
     text-decoration:none;
+
     font-size:11px;
     letter-spacing:3px;
     text-transform:uppercase;
+
     transition:.3s;
 }
 
 .btn:hover{
-    background:#fff;
-    color:#000;
-    border-color:#fff;
+    background:#dcefe3;
+    color:#071009;
+    border-color:#dcefe3;
+    box-shadow:0 0 30px rgba(91,161,117,.15);
 }
 
-/* SECTIONS */
+
+/* =========================================================
+   SECTIONS
+========================================================= */
 
 section{
     padding:110px 7%;
@@ -204,7 +233,7 @@ section{
 }
 
 .section-title small{
-    color:#666;
+    color:#63806f;
     letter-spacing:4px;
     font-size:11px;
 }
@@ -216,7 +245,10 @@ section{
     letter-spacing:-2px;
 }
 
-/* ABOUT */
+
+/* =========================================================
+   ABOUT
+========================================================= */
 
 .about{
     display:grid;
@@ -237,6 +269,7 @@ section{
 
 .info-list{
     margin-top:35px;
+
     display:grid;
     gap:15px;
 }
@@ -244,12 +277,14 @@ section{
 .info{
     display:flex;
     justify-content:space-between;
-    border-bottom:1px solid #222;
+
+    border-bottom:1px solid #202721;
+
     padding-bottom:13px;
 }
 
 .info span:first-child{
-    color:#666;
+    color:#587061;
     font-size:11px;
     letter-spacing:2px;
     text-transform:uppercase;
@@ -260,7 +295,10 @@ section{
     font-size:13px;
 }
 
-/* MUSIC */
+
+/* =========================================================
+   MUSIC
+========================================================= */
 
 .music-grid{
     display:grid;
@@ -270,22 +308,36 @@ section{
 
 .music-card{
     min-height:220px;
-    border:1px solid #222;
+
+    border:1px solid #202822;
+
     padding:30px;
+
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    background:linear-gradient(145deg,#101010,#070707);
+
+    background:
+        linear-gradient(
+            145deg,
+            #101512,
+            #070907
+        );
+
     transition:.4s;
 }
 
 .music-card:hover{
     transform:translateY(-7px);
-    border-color:#555;
+    border-color:#46765a;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35),
+        0 0 30px rgba(35,110,69,.06);
 }
 
 .music-card .number{
-    color:#555;
+    color:#466652;
     font-size:12px;
 }
 
@@ -303,79 +355,191 @@ section{
 .music-card a{
     color:#fff;
     text-decoration:none;
+
     font-size:10px;
     letter-spacing:3px;
     text-transform:uppercase;
+
+    transition:.3s;
 }
 
-/* LIVE RADIO */
+.music-card a:hover{
+    color:#6fb28a;
+}
 
-.live-player{
-    border:1px solid #252525;
-    padding:35px;
-    background:linear-gradient(145deg,#111,#060606);
-    box-shadow:0 25px 80px rgba(0,0,0,.35);
+
+/* =========================================================
+   LIVE RADIO — PREMIUM GREEN
+========================================================= */
+
+#live{
     position:relative;
-    overflow:hidden;
 }
 
-.live-player::before{
+#live::before{
     content:"";
+
     position:absolute;
-    inset:0;
+
+    width:700px;
+    height:700px;
+
+    left:50%;
+    top:40%;
+
+    transform:translate(-50%,-50%);
+
     background:
         radial-gradient(
-            circle at 80% 20%,
-            rgba(255,255,255,.06),
-            transparent 35%
+            circle,
+            rgba(29,104,64,.10),
+            transparent 65%
         );
+
     pointer-events:none;
 }
 
+
+/* PLAYER */
+
+.live-player{
+
+    border:1px solid #31533f;
+
+    padding:35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101713,
+            #060806
+        );
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.45),
+        inset 0 0 60px rgba(36,103,64,.04);
+
+    position:relative;
+    overflow:hidden;
+
+    border-radius:2px;
+}
+
+.live-player::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(83,161,111,.10),
+            transparent 35%
+        );
+
+    pointer-events:none;
+}
+
+.live-player::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    top:0;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #5c9d73,
+            transparent
+        );
+
+    opacity:.65;
+}
+
+
+/* LIVE TOP */
+
 .live-top{
+
     display:flex;
+
     justify-content:space-between;
     align-items:center;
+
     gap:30px;
+
     position:relative;
     z-index:2;
 }
 
 .live-label{
-    color:#666;
+
+    color:#61806c;
+
     font-size:9px;
+
     letter-spacing:4px;
 }
 
 .live-top h3{
+
     margin-top:10px;
+
     font-size:28px;
+
     text-transform:uppercase;
+
     letter-spacing:-1px;
 }
 
 .live-top p{
-    color:#666;
+
+    color:#607067;
+
     font-size:12px;
+
     margin-top:8px;
 }
+
 
 /* EQUALIZER */
 
 .live-eq{
+
     display:flex;
+
     align-items:center;
+
     gap:5px;
+
     height:50px;
 }
 
 .live-eq span{
+
     display:block;
+
     width:3px;
+
     height:18px;
-    background:#fff;
+
+    background:#6eb58a;
+
     opacity:.65;
+
     animation:eq 1s ease-in-out infinite alternate;
+
+    box-shadow:
+        0 0 10px rgba(80,166,111,.35);
 }
 
 .live-eq span:nth-child(2){
@@ -412,292 +576,467 @@ section{
 
 }
 
+
 /* PROGRESS */
 
 .live-progress{
+
     display:grid;
+
     grid-template-columns:45px 1fr 45px;
+
     align-items:center;
+
     gap:15px;
+
     margin-top:35px;
+
     position:relative;
     z-index:2;
 }
 
 .live-progress span{
-    color:#666;
+
+    color:#637067;
+
     font-size:10px;
+
     font-variant-numeric:tabular-nums;
 }
 
+
+/* SLIDERS */
+
 #progressBar,
 #volumeBar{
+
     appearance:none;
+
     width:100%;
+
     height:3px;
-    background:#292929;
+
+    background:#27322b;
+
     outline:none;
+
     cursor:pointer;
 }
 
 #progressBar::-webkit-slider-thumb,
 #volumeBar::-webkit-slider-thumb{
+
     appearance:none;
+
     width:12px;
     height:12px;
+
     border-radius:50%;
-    background:#fff;
+
+    background:#78bd91;
+
     cursor:pointer;
+
+    box-shadow:
+        0 0 12px rgba(77,167,108,.45);
 }
 
 #progressBar::-moz-range-thumb,
 #volumeBar::-moz-range-thumb{
+
     width:12px;
     height:12px;
+
     border-radius:50%;
-    background:#fff;
+
+    background:#78bd91;
+
     cursor:pointer;
+
     border:none;
 }
+
 
 /* CONTROLS */
 
 .live-controls{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     margin-top:30px;
+
     position:relative;
+
     z-index:2;
 }
 
-/* MAIN PLAY BUTTON */
+
+/* MAIN PLAY */
 
 .main-play{
+
     width:68px;
     height:68px;
+
     border-radius:50%;
-    border:1px solid #555;
-    background:#090909;
+
+    border:1px solid #47775a;
+
+    background:#080b09;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     cursor:pointer;
+
     transition:.3s;
+
     box-shadow:
-        0 0 0 1px rgba(255,255,255,.03),
-        0 0 35px rgba(255,255,255,.08);
+
+        0 0 0 1px rgba(255,255,255,.02),
+
+        0 0 35px rgba(47,131,76,.10);
 }
 
 .main-play:hover{
-    background:#fff;
-    border-color:#fff;
+
+    background:#6fb58a;
+
+    border-color:#8acaa1;
+
     transform:scale(1.08);
+
     box-shadow:
-        0 0 30px rgba(255,255,255,.18),
-        0 0 70px rgba(255,255,255,.08);
+
+        0 0 30px rgba(84,170,112,.25),
+
+        0 0 70px rgba(84,170,112,.10);
 }
+
 
 /* PLAY ICON */
 
 .play-icon{
+
     width:0;
     height:0;
+
     border-top:11px solid transparent;
     border-bottom:11px solid transparent;
-    border-left:17px solid #fff;
+
+    border-left:17px solid #78bd91;
+
     margin-left:5px;
 }
 
 .main-play:hover .play-icon{
-    border-left-color:#000;
+    border-left-color:#061009;
 }
 
-/* PAUSE ICON */
+
+/* PAUSE */
 
 .pause-icon{
+
     width:16px;
     height:20px;
-    border-left:5px solid #fff;
-    border-right:5px solid #fff;
+
+    border-left:5px solid #78bd91;
+    border-right:5px solid #78bd91;
 }
 
 .main-play:hover .pause-icon{
-    border-color:#000;
+    border-color:#061009;
 }
+
 
 /* VOLUME */
 
 .volume-wrap{
+
     display:flex;
+
     align-items:center;
+
     gap:15px;
+
     width:180px;
 }
 
 .volume-wrap span{
-    color:#555;
+
+    color:#587061;
+
     font-size:9px;
+
     letter-spacing:2px;
 }
+
 
 /* LIVE LIST */
 
 .live-list{
+
     display:grid;
+
     gap:10px;
+
     margin-top:20px;
 }
 
 .live-card{
-    border:1px solid #1d1d1d;
-    background:#090909;
+
+    border:1px solid #1d261f;
+
+    background:#080b09;
+
     padding:22px 25px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     transition:.3s;
 }
 
 .live-card:hover{
-    border-color:#444;
+
+    border-color:#3d674d;
+
     transform:translateX(5px);
+
+    background:#0c110e;
 }
 
 .live-card.active{
-    border-color:#777;
-    background:#111;
-    box-shadow:0 0 30px rgba(255,255,255,.03);
+
+    border-color:#5b936e;
+
+    background:
+        linear-gradient(
+            90deg,
+            #101912,
+            #090d0a
+        );
+
+    box-shadow:
+        0 0 35px rgba(42,116,70,.09),
+        inset 3px 0 0 #57906b;
 }
 
 .live-number{
-    color:#555;
+
+    color:#52715f;
+
     font-size:10px;
+
     letter-spacing:2px;
 }
 
 .live-card h3{
+
     margin-top:6px;
+
     font-size:16px;
+
     text-transform:uppercase;
 }
 
 .live-card p{
-    color:#666;
+
+    color:#647068;
+
     font-size:11px;
+
     margin-top:5px;
 }
+
 
 /* SET PLAY */
 
 .set-play{
+
     width:48px;
     height:48px;
-    border:1px solid #333;
+
+    border:1px solid #304237;
+
     border-radius:50%;
-    background:#080808;
+
+    background:#080b09;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     cursor:pointer;
+
     transition:.3s;
 }
 
 .set-play:hover,
 .live-card.active .set-play{
-    background:#fff;
-    border-color:#fff;
+
+    background:#76b98d;
+
+    border-color:#76b98d;
+
+    box-shadow:
+        0 0 25px rgba(75,156,100,.20);
 }
 
 .small-play{
+
     width:0;
     height:0;
+
     border-top:8px solid transparent;
     border-bottom:8px solid transparent;
-    border-left:13px solid #fff;
+
+    border-left:13px solid #76b98d;
+
     margin-left:3px;
 }
 
 .set-play:hover .small-play,
 .live-card.active .small-play{
-    border-left-color:#000;
+
+    border-left-color:#061009;
 }
 
-/* GALLERY */
+
+/* =========================================================
+   GALLERY
+========================================================= */
 
 .gallery{
+
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:12px;
 }
 
 .gallery img{
+
     width:100%;
+
     height:380px;
+
     object-fit:cover;
+
     filter:grayscale(100%);
+
     transition:.5s;
+
     display:block;
 }
 
 .gallery img:hover{
+
     filter:grayscale(0%);
+
     transform:scale(1.02);
 }
 
-/* SOCIAL */
+
+/* =========================================================
+   SOCIAL
+========================================================= */
 
 .socials{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:repeat(5,1fr);
+
     gap:15px;
 }
 
 .social{
-    border:1px solid #222;
+
+    border:1px solid #222a25;
+
     padding:35px 20px;
+
     text-align:center;
+
     text-decoration:none;
+
     color:#fff;
+
     transition:.3s;
 }
 
 .social:hover{
-    background:#fff;
-    color:#000;
+
+    background:#dcefe3;
+
+    color:#061009;
+
+    border-color:#dcefe3;
 }
 
 .social small{
+
     display:block;
+
     font-size:9px;
+
     letter-spacing:3px;
-    color:#777;
+
+    color:#718078;
+
     margin-bottom:10px;
 }
 
 .social strong{
+
     font-size:14px;
+
     letter-spacing:1px;
 }
 
-/* BOOKING */
+
+/* =========================================================
+   BOOKING
+========================================================= */
 
 .booking{
+
     text-align:center;
+
     padding-top:130px;
     padding-bottom:130px;
 }
 
 .booking h2{
+
     font-size:clamp(45px,8vw,100px);
+
     text-transform:uppercase;
+
     letter-spacing:-4px;
 }
 
 .booking p{
+
     color:#777;
+
     margin:25px auto 40px;
+
     max-width:500px;
+
     line-height:1.8;
 }
 
@@ -705,20 +1044,34 @@ section{
     margin-left:10px;
 }
 
-/* FOOTER */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
-    border-top:1px solid #222;
+
+    border-top:1px solid #202721;
+
     padding:30px 7%;
+
     display:flex;
+
     justify-content:space-between;
-    color:#555;
+
+    color:#536058;
+
     font-size:10px;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
 }
 
-/* MOBILE */
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:800px){
 
@@ -799,13 +1152,45 @@ footer{
 
 }
 
+
+/* SMALL PHONES */
+
+@media(max-width:480px){
+
+    .live-controls{
+        align-items:flex-end;
+    }
+
+    .main-play{
+        width:64px;
+        height:64px;
+    }
+
+    .volume-wrap{
+        width:125px;
+    }
+
+    .live-card h3{
+        font-size:14px;
+    }
+
+    .live-card p{
+        font-size:10px;
+    }
+
+}
+
 </style>
+
 </head>
 
 
 <body>
 
-<!-- NAVBAR -->
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
 
 <nav>
 
@@ -814,17 +1199,35 @@ footer{
     </div>
 
     <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#live">Live</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Booking</a></li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#music">Music</a>
+        </li>
+
+        <li>
+            <a href="#live">Live</a>
+        </li>
+
+        <li>
+            <a href="#gallery">Gallery</a>
+        </li>
+
+        <li>
+            <a href="#contact">Booking</a>
+        </li>
+
     </ul>
 
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <header class="hero">
 
@@ -861,7 +1264,9 @@ footer{
 </header>
 
 
-<!-- ABOUT -->
+<!-- =========================================================
+     ABOUT
+========================================================= -->
 
 <section id="about">
 
@@ -943,7 +1348,9 @@ footer{
 </section>
 
 
-<!-- MUSIC -->
+<!-- =========================================================
+     MUSIC
+========================================================= -->
 
 <section id="music">
 
@@ -1056,7 +1463,9 @@ footer{
 </section>
 
 
-<!-- LIVE RADIO -->
+<!-- =========================================================
+     LIVE RADIO
+========================================================= -->
 
 <section id="live">
 
@@ -1349,7 +1758,9 @@ footer{
 </section>
 
 
-<!-- GALLERY -->
+<!-- =========================================================
+     GALLERY
+========================================================= -->
 
 <section id="gallery">
 
@@ -1394,7 +1805,9 @@ footer{
 </section>
 
 
-<!-- SOCIAL -->
+<!-- =========================================================
+     SOCIAL
+========================================================= -->
 
 <section>
 
@@ -1505,7 +1918,9 @@ footer{
 </section>
 
 
-<!-- BOOKING -->
+<!-- =========================================================
+     BOOKING
+========================================================= -->
 
 <section
     id="contact"
@@ -1550,7 +1965,9 @@ footer{
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
@@ -1565,77 +1982,94 @@ footer{
 </footer>
 
 
-<!-- JAVASCRIPT -->
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+
+/* =========================================================
+   CLOUDFLARE R2 AUDIO FILES
+========================================================= */
+
+const R2_BASE =
+"https://pub-6b8dbb24bdcf46e98137b761cf56a7b7.r2.dev/audio/";
+
 
 const liveSets = [
 
     {
-        title: "Ortaya Karışık 1",
-        url: "https://disk.yandex.com.tr/d/eI0u2xQKqLQbPw"
+        title:"Ortaya Karışık 1",
+        url:R2_BASE + "ortaya-karışık-1.mp3"
     },
 
     {
-        title: "Ortaya Karışık 2",
-        url: "https://disk.yandex.com.tr/d/mJwxGtir6uMaHQ"
+        title:"Ortaya Karışık 2",
+        url:R2_BASE + "ortaya-karışık-2.mp3"
     },
 
     {
-        title: "Ortaya Karışık 3",
-        url: "https://disk.yandex.com.tr/d/deaGvJHZyNIqpw"
+        title:"Ortaya Karışık 3",
+        url:R2_BASE + "ortaya-karışık-3.mp3"
     },
 
     {
-        title: "Ortaya Karışık 4",
-        url: "https://disk.yandex.com.tr/d/K7-rmRuEUWCn7g"
+        title:"Ortaya Karışık 4",
+        url:R2_BASE + "ortaya-karışık-4.mp3"
     },
 
     {
-        title: "Ortaya Karışık 5",
-        url: "https://disk.yandex.com.tr/d/qQHebFJ5pa9E9g"
+        title:"Ortaya Karışık 5",
+        url:R2_BASE + "ortaya-karışık-5.mp3"
     }
 
 ];
 
 
-/* ELEMENTS */
+/* =========================================================
+   ELEMENTS
+========================================================= */
 
 const audio =
-    document.getElementById("liveAudio");
+document.getElementById("liveAudio");
 
 const mainPlay =
-    document.getElementById("mainPlay");
+document.getElementById("mainPlay");
 
 const progressBar =
-    document.getElementById("progressBar");
+document.getElementById("progressBar");
 
 const volumeBar =
-    document.getElementById("volumeBar");
+document.getElementById("volumeBar");
 
 const liveTitle =
-    document.getElementById("liveTitle");
+document.getElementById("liveTitle");
 
 const liveStatus =
-    document.getElementById("liveStatus");
+document.getElementById("liveStatus");
 
 const currentTime =
-    document.getElementById("currentTime");
+document.getElementById("currentTime");
 
 const duration =
-    document.getElementById("duration");
+document.getElementById("duration");
 
 const setButtons =
-    document.querySelectorAll(".set-play");
+document.querySelectorAll(".set-play");
 
 const liveCards =
-    document.querySelectorAll(".live-card");
+document.querySelectorAll(".live-card");
 
 
 let currentSet = -1;
 
 
-/* FORMAT TIME */
+/* =========================================================
+   FORMAT TIME
+========================================================= */
 
 function formatTime(seconds){
 
@@ -1644,24 +2078,26 @@ function formatTime(seconds){
     }
 
     const hours =
-        Math.floor(seconds / 3600);
+    Math.floor(seconds / 3600);
 
     const minutes =
-        Math.floor(
-            (seconds % 3600) / 60
-        );
+    Math.floor(
+        (seconds % 3600) / 60
+    );
 
     const secs =
-        Math.floor(seconds % 60);
+    Math.floor(seconds % 60);
 
 
     if(hours > 0){
 
         return (
             String(hours).padStart(2,"0")
-            + ":" +
+            + ":"
+            +
             String(minutes).padStart(2,"0")
-            + ":" +
+            + ":"
+            +
             String(secs).padStart(2,"0")
         );
 
@@ -1670,60 +2106,22 @@ function formatTime(seconds){
 
     return (
         String(minutes).padStart(2,"0")
-        + ":" +
+        + ":"
+        +
         String(secs).padStart(2,"0")
     );
 
 }
 
 
-/* GET YANDEX DIRECT AUDIO URL */
-
-async function getYandexDirectUrl(publicUrl){
-
-    const apiUrl =
-        "https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key="
-        + encodeURIComponent(publicUrl);
-
-
-    const response =
-        await fetch(apiUrl);
-
-
-    if(!response.ok){
-
-        throw new Error(
-            "Yandex bağlantısı alınamadı."
-        );
-
-    }
-
-
-    const data =
-        await response.json();
-
-
-    if(!data.href){
-
-        throw new Error(
-            "Yandex MP3 bağlantısı bulunamadı."
-        );
-
-    }
-
-
-    return data.href;
-
-}
-
-
-/* PLAY SET */
+/* =========================================================
+   PLAY SET
+========================================================= */
 
 async function playSet(index){
 
     const set =
-        liveSets[index];
-
+    liveSets[index];
 
     if(!set){
         return;
@@ -1734,11 +2132,11 @@ async function playSet(index){
 
 
     liveTitle.textContent =
-        set.title;
+    set.title;
 
 
     liveStatus.textContent =
-        "Preparing live set...";
+    "Loading live set...";
 
 
     liveCards.forEach(card => {
@@ -1751,7 +2149,7 @@ async function playSet(index){
     if(liveCards[index]){
 
         liveCards[index]
-            .classList.add("active");
+        .classList.add("active");
 
     }
 
@@ -1759,31 +2157,22 @@ async function playSet(index){
     try{
 
         /*
-        Aynı set tekrar seçilirse
-        yeniden URL istemiyoruz.
+        Yeni set seçildiyse
+        R2 bağlantısını değiştir.
         */
 
         if(
-            !audio.dataset.set ||
             audio.dataset.set !== String(index)
         ){
 
-            liveStatus.textContent =
-                "Loading live set...";
+            audio.pause();
 
-
-            const directUrl =
-                await getYandexDirectUrl(
-                    set.url
-                );
-
-
-            audio.src =
-                directUrl;
-
+            audio.src = set.url;
 
             audio.dataset.set =
-                String(index);
+            String(index);
+
+            audio.load();
 
         }
 
@@ -1792,24 +2181,29 @@ async function playSet(index){
 
 
         liveStatus.textContent =
-            "Yusuf Devrim Işık • Live Session";
-
+        "Yusuf Devrim Işık • Live Session";
 
     }
+
     catch(error){
 
-        console.error(error);
+        console.error(
+            "Audio error:",
+            error
+        );
 
 
         liveStatus.textContent =
-            "Unable to play this set.";
+        "Audio could not be loaded.";
 
     }
 
 }
 
 
-/* MAIN PLAY */
+/* =========================================================
+   MAIN PLAY
+========================================================= */
 
 function toggleMainPlay(){
 
@@ -1827,6 +2221,7 @@ function toggleMainPlay(){
         audio.play();
 
     }
+
     else{
 
         audio.pause();
@@ -1836,24 +2231,21 @@ function toggleMainPlay(){
 }
 
 
-/* SET BUTTONS */
+/* =========================================================
+   SET BUTTONS
+========================================================= */
 
 setButtons.forEach(button => {
 
     button.addEventListener(
         "click",
-        () => {
+        function(){
 
             const index =
-                Number(
-                    button.dataset.index
-                );
+            Number(
+                button.dataset.index
+            );
 
-
-            /*
-            Aynı parça çalıyorsa
-            pause / play yap.
-            */
 
             if(
                 currentSet === index &&
@@ -1875,7 +2267,9 @@ setButtons.forEach(button => {
 });
 
 
-/* MAIN PLAY BUTTON */
+/* =========================================================
+   MAIN PLAY BUTTON
+========================================================= */
 
 mainPlay.addEventListener(
     "click",
@@ -1883,112 +2277,66 @@ mainPlay.addEventListener(
 );
 
 
-/* TIME UPDATE */
+/* =========================================================
+   TIME UPDATE
+========================================================= */
 
 audio.addEventListener(
     "timeupdate",
-    () => {
+    function(){
 
-        if(audio.duration){
+        if(
+            isFinite(audio.duration) &&
+            audio.duration > 0
+        ){
 
             progressBar.value =
-                (
-                    audio.currentTime /
-                    audio.duration
-                ) * 100;
+            (
+                audio.currentTime /
+                audio.duration
+            ) * 100;
 
         }
 
 
         currentTime.textContent =
-            formatTime(
-                audio.currentTime
-            );
+        formatTime(
+            audio.currentTime
+        );
 
     }
 );
 
 
-/* METADATA */
+/* =========================================================
+   METADATA
+========================================================= */
 
 audio.addEventListener(
     "loadedmetadata",
-    () => {
+    function(){
 
         duration.textContent =
-            formatTime(
-                audio.duration
-            );
+        formatTime(
+            audio.duration
+        );
 
     }
 );
 
 
-/* PLAY EVENT */
+/* =========================================================
+   CAN PLAY
+========================================================= */
 
 audio.addEventListener(
-    "play",
-    () => {
+    "canplay",
+    function(){
 
-        mainPlay.innerHTML =
-            '<span class="pause-icon"></span>';
+        if(currentSet !== -1){
 
-    }
-);
-
-
-/* PAUSE EVENT */
-
-audio.addEventListener(
-    "pause",
-    () => {
-
-        mainPlay.innerHTML =
-            '<span class="play-icon"></span>';
-
-    }
-);
-
-
-/* ENDED */
-
-audio.addEventListener(
-    "ended",
-    () => {
-
-        mainPlay.innerHTML =
-            '<span class="play-icon"></span>';
-
-    }
-);
-
-
-/* ERROR */
-
-audio.addEventListener(
-    "error",
-    () => {
-
-        liveStatus.textContent =
-            "Audio could not be loaded.";
-
-    }
-);
-
-
-/* PROGRESS */
-
-progressBar.addEventListener(
-    "input",
-    () => {
-
-        if(audio.duration){
-
-            audio.currentTime =
-                (
-                    progressBar.value /
-                    100
-                ) * audio.duration;
+            liveStatus.textContent =
+            "Yusuf Devrim Işık • Live Session";
 
         }
 
@@ -1996,24 +2344,131 @@ progressBar.addEventListener(
 );
 
 
-/* VOLUME */
+/* =========================================================
+   PLAY EVENT
+========================================================= */
 
-volumeBar.addEventListener(
-    "input",
-    () => {
+audio.addEventListener(
+    "play",
+    function(){
 
-        audio.volume =
-            volumeBar.value;
+        mainPlay.innerHTML =
+        '<span class="pause-icon"></span>';
 
     }
 );
 
 
-/* DEFAULT VOLUME */
+/* =========================================================
+   PAUSE EVENT
+========================================================= */
+
+audio.addEventListener(
+    "pause",
+    function(){
+
+        mainPlay.innerHTML =
+        '<span class="play-icon"></span>';
+
+    }
+);
+
+
+/* =========================================================
+   ENDED
+========================================================= */
+
+audio.addEventListener(
+    "ended",
+    function(){
+
+        mainPlay.innerHTML =
+        '<span class="play-icon"></span>';
+
+        progressBar.value = 0;
+
+        currentTime.textContent =
+        "00:00";
+
+    }
+);
+
+
+/* =========================================================
+   AUDIO ERROR
+========================================================= */
+
+audio.addEventListener(
+    "error",
+    function(){
+
+        console.error(
+            "R2 Audio Error",
+            audio.error
+        );
+
+        liveStatus.textContent =
+        "Audio could not be loaded.";
+
+    }
+);
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+progressBar.addEventListener(
+    "input",
+    function(){
+
+        if(
+            isFinite(audio.duration) &&
+            audio.duration > 0
+        ){
+
+            audio.currentTime =
+            (
+                progressBar.value /
+                100
+            ) *
+            audio.duration;
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   VOLUME
+========================================================= */
+
+volumeBar.addEventListener(
+    "input",
+    function(){
+
+        audio.volume =
+        Number(
+            volumeBar.value
+        );
+
+    }
+);
+
+
+/* =========================================================
+   DEFAULT VOLUME
+========================================================= */
 
 audio.volume = 0.9;
 
+
+});
+
 </script>
 
+
 </body>
+
 </html>
